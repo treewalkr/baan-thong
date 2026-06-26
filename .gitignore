@@ -1,1 +1,42 @@
+# --- Local context docs (kept out of the repo) ---
 INIT.md
+NOTE.md
+CONTEXT.md
+CLAUDE.md
+.claude/
+
+# --- Secrets / env ---
+.env
+.env.*
+!.env.example
+
+# --- Dependencies ---
+node_modules/
+
+# --- Build output ---
+dist/
+build/
+.svelte-kit/
+*.tsbuildinfo
+
+# --- Postgres / data ---
+data/
+*.sql.gz
+
+# --- Testing / tooling ---
+coverage/
+.playwright/
+test-results/
+
+# --- Logs ---
+*.log
+
+# --- OS / editor ---
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# --- Profiling output (Bun CPU profile, k6 results) ---
+profiles/
+*.cpuprofile
