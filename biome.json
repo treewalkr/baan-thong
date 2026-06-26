@@ -12,9 +12,7 @@
       "**/*.js",
       "**/*.jsx",
       "**/*.json",
-      "**/*.jsonc",
-      "**/*.svelte",
-      "**/*.css"
+      "**/*.jsonc"
     ],
     "ignoreUnknown": true
   },

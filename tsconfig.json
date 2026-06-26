@@ -22,7 +22,9 @@
   },
   "references": [
     { "path": "./apps/backend" },
-    { "path": "./apps/web" },
+    // apps/web is intentionally NOT a `tsc -b` reference: plain tsc can't see
+    // Svelte's `.svelte` module exports. Typecheck it via `just check`, which
+    // runs `svelte-check` for the frontend and `tsc -b` for backend + shared.
     { "path": "./packages/shared" }
   ],
   "files": []

@@ -11,13 +11,21 @@ default:
 
 # --- Dev / build ---
 
-# Boot the backend in dev mode (hot reload). Frontend joins when its issue lands.
+# Boot backend + frontend in dev mode (hot reload), concurrently.
+# `--filter '*'` matches every workspace; `--parallel` runs their `dev` scripts
+# at once (packages/shared has none and is skipped).
 dev:
-    bun run --filter '@baanthong/backend' dev
+    bun run --parallel --filter '*' dev
 
 # Build all workspaces.
 build:
     bun run --filter '*' build
+
+# Typecheck the whole tree: `tsc -b` for backend + shared, `svelte-check`
+# for the frontend (plain tsc can't see Svelte's `.svelte` exports).
+check:
+    bunx tsc -b
+    bun run --filter '@baanthong/web' check
 
 # --- Lint / format (Biome) ---
 
