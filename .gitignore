@@ -4,6 +4,7 @@ NOTE.md
 CONTEXT.md
 CLAUDE.md
 .claude/
+.handoffs/
 
 # --- Secrets / env ---
 .env

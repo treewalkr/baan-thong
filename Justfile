@@ -11,10 +11,9 @@ default:
 
 # --- Dev / build ---
 
-# Boot backend + frontend together in dev mode. (stub: full apps come later)
+# Boot the backend in dev mode (hot reload). Frontend joins when its issue lands.
 dev:
-    @echo "[just dev] starting workspaces in dev mode…"
-    bun run --filter '*' dev
+    bun run --filter '@baanthong/backend' dev
 
 # Build all workspaces.
 build:
